@@ -43,5 +43,5 @@ The following events are currently supported.
 **Other new APIs related:**
 
 1. Added **eventArgs.getRange()** method for the **onChanged** event to return the range object that is associated with the address when the event occurs.
-2. Added **context.runtime.enableEvents = true | false** to turn JavaScript events on and off for the current taskpane or content add-in.
+2. Added **context.runtime.enableEvents** (true/false) to turn JavaScript events on and off for the current taskpane or content add-in.
 3. Added **application.calculationMode** to change the calculation mode of Excel. Options are _Automatic, AutomaticExcepTables, Manual_.
