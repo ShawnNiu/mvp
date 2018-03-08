@@ -5,27 +5,43 @@ _[Home page](../index.md)_
 # Event API introduction
 
 ## Event API in Beta
+Events APIs in JavaScript provides a way of interacting between add-ins and users upon several objects. Each time certain types of changes occur in Excel, an event notification fires. By using the Excel JavaScript API, you can register event handlers that allow your add-in to automatically run a designated function when a specific action occurs. 
 
-Events APIs in Javascript provides a way of interacting between add-ins and users upon several objects. Each time certain types of changes occur in Excel, an event notification fires. By using the Excel JavaScript API, you can register event handlers that allow your add-in to automatically run a designated function when a specific event occurs. The following events are currently supported.
+The actions include operations such as changing selection on a worksheet, adding or deleting a worksheet, changing the contents in a cell, etc. Actions can come from both local and remote users, who are co-authoring on the same workbook. Developers can define a JavaScript function called “Event handler” in their add-in and register it to a specific event in Excel. When the events occur in the workbook, the event handler will be run automatically. In the event handler, developers can call other Excel JavaScript APIs to further interact with the Workbook, with the information carried in the event arguments.
 
-Please refer to [this](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/Event_README.md) for the lists of all the arguments.
+The following events are currently supported.
 
-| Event | Description | Supported objects and arguments |
-|:---------------|:-------------|:-----------|
-| `onAdded` | Event that occurs when an object is added. | [**WorksheetCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/worksheetaddedeventargs.md) |
-| `onActivated` | Event that occurs when an object is activated. | [**WorksheetCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/worksheetactivatedeventargs.md), [**Worksheet**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/worksheetactivatedeventargs.md) |
-| `onDeactivated` | Event that occurs when an object is deactivated. | [**WorksheetCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/worksheetdeactivatedeventargs.md), [**Worksheet**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/worksheetdeactivatedeventargs.md) |
-| `onChanged` | Event that occurs when data within cells is changed. | [**Worksheet**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/worksheetchangedeventargs.md), [**Table**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/tablechangedeventargs.md), [**TableCollection**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/tablechangedeventargs.md) |
-| `onSelectionChanged` | Event that occurs when the active cell or selected range is changed. | [**Worksheet**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/worksheetselectionchangedeventargs.md), [**Table**](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/tableselectionchangedeventargs.md) |
+**Below are the new events:**
 
-## Upcoming event API
+| Object | Event | Description | Event Argument |
+| --- | --- | --- | --- |
+| Table | onChanged | Occurs when cells on the table are changed by the user or by APIs. | [TableChangedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/tablechangedeventargs.md) |
+| Table | onSelectionChanged | Occurs when selection has changed on a table. | [TableSelectionChangedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/tableselectionchangedeventargs.md) |
+| TableCollection | onChanged | Occurs when cells on any table are changed by the user or by APIs. | [TableChangedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/tablechangedeventargs.md) |
+| Worksheet | onActivated | Occurs when the worksheet has become activated. | [WorksheetActivatedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/worksheetactivatedeventargs.md) |
+| Worksheet| onChanged | Occurs when cells on the worksheet are changed by the user or APIs. | [WorksheetChangedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/worksheetchangedeventargs.md) |
+| Worksheet | onDeactivated | Occurs when the worksheet has become deactivated. | [WorksheetDeactivatedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/worksheetdeactivatedeventargs.md) |
+| Worksheet | onSelectionChanged | Occurs when selection has changed on the worksheet | [WorksheetSelectionChangedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/worksheetselectionchangedeventargs.md) |
+| WorksheetCollection | onActivated | Occurs when any worksheet has become activated. | [WorksheetActivatedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/worksheetactivatedeventargs.md) |
+| WorksheetCollection | onAdded | Occurs when a worksheet has been added to the workbook. | [WorksheetAddedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/worksheetaddedeventargs.md) |
+| WorksheetCollection| onDeactivated | Occurs when any worksheet has become deactivated. | [WorksheetDeactivatedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/worksheetdeactivatedeventargs.md) |
+| WorksheetCollection | onDeleted | Occurs when a worksheet has been deleted from the workbook. | [WorksheetDeletedEventargs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/worksheetdeletedeventargs.md) |
 
-More event APIs are under progress. If you think about event APIs lack in certain type of events, please fill out in the survey section.
+**More events will be upcoming soon:**
 
-| Event | Description | Supported objects |
-|:---------------|:-------------|:-----------|
-| `onAdded` | Event that occurs when an object is added. | **ChartCollction** |
-| `onDeleted` | Event that occurs when an object is deleted. | **WorksheetCollection**, **ChartCollection** |
-| `onActivated` | Event that occurs when an object is activated. | **ChartCollection**, **Chart** |
-| `onDeactivated` | Event that occurs when an object is deactivated. | **ChartCollection**, **Chart** |
-| `onCalculated` | Event that occurs when calculation is done in worksheet. | **Worksheet** |
+| Object | Event | Description | Event Argument |
+| --- | --- | --- | --- |
+| Chart | _onActivated_ | Occurs when the chart has become activated. | [ChartActivatedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/chartactivatedeventargs.md) |
+| Chart | _onDeactivated_ | Occurs when the chart has become deactivated. | [ChartDeactivatedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/chartdeactivatedeventargs.md) |
+| ChartCollection | _onActivated_ | Occurs when any chart has become activated. | [ChartActivatedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/chartactivatedeventargs.md) |
+| ChartCollection | _onAdded_ | Occurs when a chart has been added. | [ChartAddedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/chartaddedeventargs.md) |
+| ChartCollection | _onDeactivated_ | Occurs when any chart has become deactivated | [ChartDeactivatedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/chartdeactivatedeventargs.md) |
+| ChartCollection | _onDeleted_ | Occurs when a worksheet has been deleted from the workbook. | [ChartDeletedEvent](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/chartdeletedevent.md) |
+| Worksheet | _onCalculated_ | Occurs when the workbook has finished calculation. | [WorsheetCalculatedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/worksheetcalculatedeventargs.md) |
+| WorkbookCollection | _onCalculated_ | Occurs when all the worksheets of the workbook have finished calculation. | [WorsheetCalculatedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/worksheetcalculatedeventargs.md) |
+
+**Other new APIs related:**
+
+1. Added **eventArgs.getRange()** method for the **onChanged** event to return the range object that is associated with the address when the event occurs.
+2. Added **context.runtime.enableEvents = true | false** to turn JavaScript events on and off for the current taskpane or content add-in.
+3. Added **application.calculationMode** to change the calculation mode of Excel. Options are _Automatic, AutomaticExcepTables, Manual_.
