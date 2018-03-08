@@ -59,7 +59,8 @@ Step3: Observe the events
 
 Make some selection change on the active worksheet on which the event has been registered. Check the logs in the Script Lab console and verify the event details.
 
-![Output]()
+
+![output](images/Picture1.png?raw=true)
 
 Step4: Unregister the events
 
