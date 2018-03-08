@@ -2,7 +2,7 @@ _[Home page](../index.md)_
 
 
 
-# New Event APIs
+# Chart API additions
 
 ## [Introduction](intro.md)
 ## [Walkthrough](walkthrough.md)
