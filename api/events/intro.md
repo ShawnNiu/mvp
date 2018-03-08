@@ -31,14 +31,14 @@ The following events are currently supported.
 
 | Object | Event | Description | Event Argument |
 | --- | --- | --- | --- |
-| Chart | _onActivated_ | Occurs when the chart has become activated. | [ChartActivatedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/chartactivatedeventargs.md) |
-| Chart | _onDeactivated_ | Occurs when the chart has become deactivated. | [ChartDeactivatedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/chartdeactivatedeventargs.md) |
-| ChartCollection | _onActivated_ | Occurs when any chart has become activated. | [ChartActivatedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/chartactivatedeventargs.md) |
-| ChartCollection | _onAdded_ | Occurs when a chart has been added. | [ChartAddedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/chartaddedeventargs.md) |
-| ChartCollection | _onDeactivated_ | Occurs when any chart has become deactivated | [ChartDeactivatedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/chartdeactivatedeventargs.md) |
-| ChartCollection | _onDeleted_ | Occurs when a worksheet has been deleted from the workbook. | [ChartDeletedEvent](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/chartdeletedevent.md) |
-| Worksheet | _onCalculated_ | Occurs when the workbook has finished calculation. | [WorsheetCalculatedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/worksheetcalculatedeventargs.md) |
-| WorkbookCollection | _onCalculated_ | Occurs when all the worksheets of the workbook have finished calculation. | [WorsheetCalculatedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/worksheetcalculatedeventargs.md) |
+| Chart | onActivated | Occurs when the chart has become activated. | [ChartActivatedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/chartactivatedeventargs.md) |
+| Chart | onDeactivated | Occurs when the chart has become deactivated. | [ChartDeactivatedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/chartdeactivatedeventargs.md) |
+| ChartCollection | onActivated | Occurs when any chart has become activated. | [ChartActivatedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/chartactivatedeventargs.md) |
+| ChartCollection | onAdded | Occurs when a chart has been added. | [ChartAddedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/chartaddedeventargs.md) |
+| ChartCollection | onDeactivated | Occurs when any chart has become deactivated | [ChartDeactivatedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/chartdeactivatedeventargs.md) |
+| ChartCollection | onDeleted | Occurs when a worksheet has been deleted from the workbook. | [ChartDeletedEvent](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/chartdeletedevent.md) |
+| Worksheet | onCalculated | Occurs when the workbook has finished calculation. | [WorsheetCalculatedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/worksheetcalculatedeventargs.md) |
+| WorkbookCollection | onCalculated | Occurs when all the worksheets of the workbook have finished calculation. | [WorsheetCalculatedEventArgs](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_OpenSpec/reference/excel/worksheetcalculatedeventargs.md) |
 
 **Other new APIs related:**
 
